@@ -9,7 +9,21 @@ class UsersController < ApplicationController
       format.json { render json: @users }
     end
   end
-
+  def all_records
+   @name = params[:name]
+   @score = params[:socre]
+   @date = params[:date]
+   @level = params[:level]
+   @level_points = params[:level_points]
+   @rank = params[:rank]
+ 
+   @user = User.create(:name =>@name,:score =>@score,:date => @date)
+   if @user.save
+   @game = @user.games.create(:level => @level,:level_points => @level_points,:rank =>@rank)
+   @game.save
+   redirect_to user_path(@user)
+   end
+  end
   # GET /users/1
   # GET /users/1.json
   def show

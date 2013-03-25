@@ -17,6 +17,7 @@
   <% @date = @user.date %>
   <%= @user.date %>
 </p>
+
 <h2>Total Games</h2>
 <% @user.games.each do |game| %>
   <p>
@@ -25,57 +26,14 @@
   </p>
  
   <p>
-    <b>Name:</b>
-    <%= game.name %>
+    <b>Level Points:</b>
+    <%= game.level_points %>
   </p>
    <p>
-    <b>Score:</b>
-    <%= game.score %>
+    <b>Rank:</b>
+    <%= game.rank %>
   </p>
- 
-  <p>
-    <b>Date:</b>
-    <%= game.date %>
-  </p>
-<% end %>
- 
-<h2>Game play:</h2>
-<%= form_for([@user, @user.games.build]) do |f| %>
-<table>
-  <tr>
-    <td>
-    <%= f.label :level %>
-	 </td>
-	 <td>
-    <%= f.text_field :level %>
-    </td>
-  </tr>
-  <tr>
-    <td>
-    <%#= f.label :name %>
-	</td>
-	<td>
-    <%= f.hidden_field :name,:value => @name,:disabled => true %>
-	</td>
-  </tr>
-  <tr>
-    <td>
-    <%#= f.label :score %>
-	</td>
-	<td>
-    <%= f.hidden_field :score,:value=>@score %>
-	</td>
- </tr>
- <tr>
-     <td>
-    <%#= f.label :date,:value => @date %>
-	</td>
-	<td>
-    <%= f.hidden_field :date %>
-	</td>
- </tr>
- </table>
-    <%= f.submit %>
+  
 <% end %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

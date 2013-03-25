@@ -2,14 +2,12 @@
 
 one:
   level: 1
-  name: MyString
-  score: 1
-  date: 2013-03-25
+  level_points: 1
+  rank: 1
   user: 
 
 two:
   level: 1
-  name: MyString
-  score: 1
-  date: 2013-03-25
+  level_points: 1
+  rank: 1
   user: 

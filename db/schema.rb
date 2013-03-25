@@ -11,16 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130325145354) do
+ActiveRecord::Schema.define(:version => 20130325165921) do
 
   create_table "games", :force => true do |t|
     t.integer  "level"
-    t.string   "name"
-    t.integer  "score"
-    t.date     "date"
+    t.integer  "level_points"
+    t.integer  "rank"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   add_index "games", ["user_id"], :name => "index_games_on_user_id"

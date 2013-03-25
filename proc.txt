@@ -1,0 +1,27 @@
+To many Ruby on Rails developers have unclear picture about proc and blocks like me. 
+This post about Procs and Block is explained what i understood.
+Procs
+In Ruby what we knew about variable is the variable can hold some date which is nothing but a value.
+Similarly procs hold a piece of code itself.
+
+Proc are also objects, these objects are blocks of code.Procs are class objects of ruby with class "Proc"
+
+Simple proc
+
+ 
+proc_obj = Proc.new{ puts “Example code for Proc” }
+
+So to call the above proc what we have to do is 
+
+proc_obj.call
+
+results:
+
+irb(main):002:0> proc_obj.call
+=> "Example code for Proc"
+
+Proc can accepts the parameters
+
+proc_obj = Proc.new{|obj| puts “object is #{object_name}”}
+We can pass the name of the object as a parameter 
+proc_obj.call(“first”)

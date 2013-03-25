@@ -1,5 +1,9 @@
 Railssmaple::Application.routes.draw do
   resources :users do
+   collection do
+     get 'all_records'
+     post 'all_records'
+   end 
     resources :games
   end
 
